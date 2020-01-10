@@ -3,13 +3,37 @@ body {
   height: 10000px;
 }
 .nav__bar {
+  width: 100%;
   position: fixed;
+  height: 80px;
 }
 
 .nav__developers-btn {
   border: none;
   outline: 0;
   border: 0;
-  background-color: red;
+  background-color: inherit;
   font-size: 16px;
+  border-bottom: 10px;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-weight: 700;
+}
+
+#n1,
+#n2,
+#n3,
+#n4 {
+  margin-bottom: 10px;
+}
+
+#n1 {
+  margin-top: 10px;
 }
