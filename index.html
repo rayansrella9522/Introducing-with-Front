@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     <script>
       $(function() {
         $("button").click(function() {
-          $("section").slideToggle(600);
+          $("section").slideToggle(1000);
         });
       });
     </script>
@@ -22,15 +22,17 @@
   </head>
   <body>
     <!-- 여기다가는 왜 이걸 하는지 등등 적어놓고 내비게이션 바 제가 만들어서 각자 파일로 갈 수 있도록 만들어 놓겠습니다!-->
+    <h1 class="header__title">
+      The developers
+    </h1>
+
     <nav class="nav__bar">
       <ul class="nav__list">
-        <li class="nav__list-items">
-          something1
-        </li>
-        <li class="nav__list-items">something2</li>
+        <li class="nav__list-items"></li>
+        <li class="nav__list-items">사용안내</li>
         <li class="nav__list-items">someting3</li>
         <li class="nav__list-items">
-          <button class="nav__developers-btn">개발자들</button>
+          <button class="nav__developers-btn">만든이들</button>
           <section>
             <ul>
               <li id="n1"><a href="#" class="developers">김원종</a></li>
@@ -39,6 +41,7 @@
               <li id="n4"><a href="#" class="developers">손우진</a></li>
             </ul>
           </section>
+          <!--abc-->
         </li>
       </ul>
     </nav>

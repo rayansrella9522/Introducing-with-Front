@@ -1,11 +1,22 @@
 body {
-  background-color: none;
   height: 10000px;
 }
-.nav__bar {
+.header__title {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  position: fixed;
-  height: 80px;
+  font-size: 8vw;
+  font-family: "Kumar One", cursive;
+  margin: 20px 0px;
+}
+
+.nav__bar {
+  position: sticky;
+  width: 100%;
+  background-color: #000000;
+  top: 0px;
+  border: 8px;
+  border-radius: 8px;
 }
 
 .nav__developers-btn {
@@ -13,19 +24,20 @@ body {
   outline: 0;
   border: 0;
   background-color: inherit;
-  font-size: 16px;
+  font-size: 20px;
   border-bottom: 10px;
   color: inherit;
   font-weight: inherit;
+  font-family: inherit;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: black;
-  font-weight: 700;
-}
+  color: white;
+  font-size: 16px;
+} /* */
 
 #n1,
 #n2,
