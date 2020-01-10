@@ -2,12 +2,22 @@ body {
   height: 10000px; /*테스트 용입니다! 일부로 그런거에요*/
 }
 .header__title {
+  font-family: "Kumar One", cursive;
   display: flex;
   justify-content: center;
   width: 100%;
   font-size: 8vw;
   font-family: "Kumar One", cursive;
   margin: 20px 0px;
+  animation: 0.5s header__title-ani ease-in, 1s nav__bar-animation ease-in;
+}
+@keyframes header__title-ani {
+  0% {
+    margin-top: 25%;
+  }
+  100% {
+    margin-top: 0px;
+  }
 }
 
 .nav__bar {
@@ -17,6 +27,17 @@ body {
   top: 0px;
   border: 8px;
   border-radius: 8px;
+  margin-bottom: 20%; /*테스트*/
+  animation: 1s nav__bar-animation ease-in;
+}
+
+@keyframes nav__bar-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .nav__developers-btn {
@@ -24,7 +45,7 @@ body {
   outline: 0;
   border: 0;
   background-color: inherit;
-  font-size: 20px;
+  font-size: inherit;
   border-bottom: 10px;
   color: inherit;
   font-weight: inherit;
@@ -36,9 +57,8 @@ body {
   align-items: center;
   justify-content: space-around;
   color: white;
-  font-size: 16px;
-} /* */
-=======
+  font-size: 5vw;
+
   font-family: "Nanum Pen Script", cursive;
 }
 
@@ -51,4 +71,33 @@ body {
 
 #n1 {
   margin-top: 10px;
+}
+
+.slack__ad {
+  display: flex;
+  align-items: center;
+}
+
+.slack__ad .title__slack-ad {
+  font-size: 5vw;
+  margin-right: 5vw;
+}
+
+.slack__icon {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  animation: 5s slack__icon-ani ease-in-out;
+}
+
+@keyframes slack__icon-ani {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: rotate(1turn) scale(0.5 0.5);
+  }
+  100% {
+    transform: none;
+  }
 }
