@@ -6,20 +6,32 @@
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Main screen</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+      $(function() {
+        $("button").click(function() {
+          $("section").slideToggle(600);
+        });
+      });
+    </script>
+    <style>
+      section {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <!-- 여기다가는 왜 이걸 하는지 등등 적어놓고 내비게이션 바 제가 만들어서 각자 파일로 갈 수 있도록 만들어 놓겠습니다!-->
-    <img src="img/index/index__background.jpg" alt="" class="first__img" />
-    <div class="main__title">
-      <p>Cover letters</p>
-    </div>
-    <div class="nav nav__box">
-      <ul class="nav__list">
-        <li class="nav__nav">김원종</li>
-        <li class="nav__nav">HTML</li>
-        <li class="nav__nav">Sangah</li>
-        <li class="nav__nav">손우진</li>
-      </ul>
-    </div>
+    <nav class="nav__bar">
+      <button class="nav__developers-btn">Developers</button>
+      <section class="slide__developers">
+        <ul>
+          <li id="n1">개발자1</li>
+          <li id="n2">개발자2</li>
+          <li id="n3">개발자3</li>
+          <li id="n4">개발자4</li>
+        </ul>
+      </section>
+    </nav>
   </body>
 </html>
