@@ -1,0 +1,22 @@
+body {
+  background-color: whitesmoke;
+}
+
+.main__title {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 350%;
+  height: 100px;
+}
+
+.nav__list {
+  color: white;
+  font-size: 20px;
+  display: flex;
+  position: sticky;
+  justify-content: space-around;
+  align-items: center;
+}
