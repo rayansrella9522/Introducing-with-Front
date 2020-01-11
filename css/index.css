@@ -1,7 +1,3 @@
-body {
-  width: 100%;
-  height: 10000px; /*테스트 용입니다! 일부로 그런거에요*/
-}
 .header__title {
   font-family: "Kumar One", cursive;
   display: flex;
