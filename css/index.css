@@ -1,6 +1,13 @@
 body {
   height: 10000px; /*테스트 용입니다!*/
 }
+
+li:hover {
+	color: #bbbbbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .header__title {
   display: flex;
   justify-content: center;
@@ -36,14 +43,17 @@ body {
   align-items: center;
   justify-content: space-around;
   color: white;
-  font-size: 4vw;
+  font-size: 2vw;
 }
+
+
 
 #n1,
 #n2,
 #n3,
 #n4 {
   margin-bottom: 10px;
+  font-size:1vw;
 }
 
 #n1 {
