@@ -2,7 +2,7 @@ body {
   height: 10000px; /*테스트 용입니다!*/
 }
 
-li:hover {
+a:hover {
 	color: #bbbbbb;
 	text-decoration: none;
 	cursor: pointer;
@@ -45,7 +45,6 @@ li:hover {
   color: white;
   font-size: 2vw;
 }
-
 
 
 #n1,
