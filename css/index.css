@@ -16,6 +16,7 @@
     margin-top: 0px;
   }
 }
+/* a태그에 마우스 포인터 닿을경우 회색깔로 포인트*/
 a:hover{
 	color: #bbbbbb;
 	text-decoration: none;
