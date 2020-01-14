@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Sunflower:300,700&display=swap&subset=korean");
 /* 쓸려면 font-family: 'Sunflower', sans-serif; */
+@import url("https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap");
+/*font-family: 'Nanum Pen Script', cursive;*/
 body {
   background-color: black;
 }

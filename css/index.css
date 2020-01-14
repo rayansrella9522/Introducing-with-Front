@@ -1,3 +1,6 @@
+body {
+  height: 100%;
+}
 .header__title {
   font-family: "Kumar One", cursive;
   display: flex;
@@ -5,14 +8,14 @@
   width: 100%;
   font-size: 8vw;
   font-family: "Kumar One", cursive;
-  margin: 20px 0px;
+  margin: 280px 0px;
   animation: 0.5s header__title-ani ease-in, 2s nav__bar-animation ease-in;
   color: white;
   border: 3px;
 }
 @keyframes header__title-ani {
   0% {
-    margin-top: 15%;
+    margin-top: 80%;
   }
   100% {
     top: 0;
@@ -26,8 +29,9 @@
   top: 0px;
   border: 8px;
   border-radius: 8px;
-  margin-bottom: 20%; /*테스트*/
   animation: 1s nav__bar-animation ease-in;
+  font-family: "Nanum Pen Script", cursive;
+  border-bottom: 1px solid #ffffff85;
 }
 
 @keyframes nav__bar-animation {
