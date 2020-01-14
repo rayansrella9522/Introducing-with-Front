@@ -6,14 +6,16 @@
   font-size: 8vw;
   font-family: "Kumar One", cursive;
   margin: 20px 0px;
-  animation: 0.5s header__title-ani ease-in, 1s nav__bar-animation ease-in;
+  animation: 0.5s header__title-ani ease-in, 2s nav__bar-animation ease-in;
+  color: white;
+  border: 3px;
 }
 @keyframes header__title-ani {
   0% {
     margin-top: 15%;
   }
   100% {
-    margin-top: 0px;
+    top: 0;
   }
 }
 
@@ -56,7 +58,7 @@
   color: white;
   font-size: 5vw;
 
- /* font-family: "Nanum Pen Script", cursive;*/
+  /* font-family: "Nanum Pen Script", cursive;*/
 }
 
 #n1,
