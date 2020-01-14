@@ -16,6 +16,11 @@
     margin-top: 0px;
   }
 }
+a:hover{
+	color: #bbbbbb;
+	text-decoration: none;
+	cursor: pointer;
+}
 
 .nav__bar {
   position: sticky;
