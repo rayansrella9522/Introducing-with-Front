@@ -3,6 +3,7 @@
 <head>
 <title>testing</title>
 <style type="text/css">
+
 body{margin:0 auto;}
 .header{
 	width:100%;
@@ -12,6 +13,7 @@ body{margin:0 auto;}
 	text-align: center;	
 	border-bottom: 1px solid grey;
 	position: fixed;
+	background:white;
 }
 .header h1{
 	margin:0 auto;
@@ -20,7 +22,7 @@ body{margin:0 auto;}
 	transition:1s;
 	color:red !important;
 	font-weight:bold;
-	font-size: 40px;
+	font-size: 33px;
 }
 
 .nav{
@@ -38,7 +40,7 @@ body{margin:0 auto;}
 	transition:1s;
 	color:red;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 33px;
 }
 .nav a{
 	margin:10px;
@@ -53,20 +55,66 @@ body{margin:0 auto;}
 	width:100%;
 	height:5000px;
 	border-bottom: 1px solid grey;
+}
 
+
+.nav div{
+	margin-top:25px;
+	display: inline-block;
+}
+
+.submenu1{
+	width:100%;
+	height:100px;
+	border-bottom: 1px solid grey;
+	position: fixed;top:200px;
+	display: none;
+	background:grey;
+}
+.submenu2{
+	width:100%;
+	height:100px;
+	border-bottom: 1px solid grey;
+	position: fixed;top:200px;
+	display: none;
+	background:grey;
+}
+.submenu3{
+	width:100%;
+	height:100px;
+	border-bottom: 1px solid grey;
+	position: fixed;top:200px;
+	display: none;
+	background:grey;
+}
+.submenu4{
+	width:100%;
+	height:100px;
+	border-bottom: 1px solid grey;
+	position: fixed;top:200px;
+	display: none;
+	background:grey;
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-<h1>The developers</h1></div>
-<div class="nav">
-<a href="">슬랙 채널</a>
-<a href="">만든이유</a>
-<a href="">커피선물</a>
-<a href="">이 웹을 만든 사람들</a>
+<h1>The developers</h1>
 </div>
+
+<div class="nav">
+<div class="menu1"><a href="">슬랙 채널</a></div>
+<div class="menu2"><a href="">만든이유</a></div>
+<div class="menu3"><a href="">커피선물</a></div>
+<div class="menu4"><a href="">이 웹을 만든 사람들</a></div>
+</div>
+
+<div class="submenu1">슬랙채널1 슬랙채널2 슬랙채널3</div>
+<div class="submenu2">이유는 없다 없으므로 없는것이니라</div>
+<div class="submenu3">선물1 선물2 선물3 선물4</div>
+<div class="submenu4">이화빈 홍길동 원종씨 블라블라 이름모름</div>
+
 <div class="content"></div>
 <div class="bottom"></div>
 
@@ -74,18 +122,63 @@ body{margin:0 auto;}
 <script type="text/javascript">
 
 var header = document.querySelector('.header');
+
 var nav = document.querySelector('.nav');
+
+var menu1 = document.querySelector('.menu1');
+var menu2 = document.querySelector('.menu2');
+var menu3 = document.querySelector('.menu3');
+var menu4 = document.querySelector('.menu4');
+var submenu1 = document.querySelector('.submenu1');
+var submenu2 = document.querySelector('.submenu2');
+var submenu3 = document.querySelector('.submenu3');
+var submenu4 = document.querySelector('.submenu4');
 
 header.addEventListener('mouseover',mouseover_H);
 function mouseover_H(){
 	nav.style.display = 'block';
 }
 
+menu1.addEventListener('mouseover',menu1_H);
+function menu1_H(){
+	submenu1.style.display = 'block';
+	submenu2.style.display = 'none';
+	submenu3.style.display = 'none';
+	submenu4.style.display = 'none';
+}
+menu2.addEventListener('mouseover',menu2_H);
+function menu2_H(){
+	submenu1.style.display = 'none';
+	submenu2.style.display = 'block';
+	submenu3.style.display = 'none';
+	submenu4.style.display = 'none';
+}
+menu3.addEventListener('mouseover',menu3_H);
+function menu3_H(){
+	submenu1.style.display = 'none';
+	submenu2.style.display = 'none';
+	submenu3.style.display = 'block';
+	submenu4.style.display = 'none';
+}
+menu4.addEventListener('mouseover',menu4_H);
+function menu4_H(){
+	submenu1.style.display = 'none';
+	submenu2.style.display = 'none';
+	submenu3.style.display = 'none';
+	submenu4.style.display = 'block';
+}
+
+
+
 document.addEventListener('mousemove',e_move);
 function e_move(event){
 	var e_y = event.clientY + document.body.scrollTop;
-	if(e_y >= 200){
+	if(e_y >= 300){
 		nav.style.display='none';
+		submenu1.style.display='none';
+		submenu2.style.display='none';
+		submenu3.style.display='none';
+		submenu4.style.display='none';
 	}
 }
 
