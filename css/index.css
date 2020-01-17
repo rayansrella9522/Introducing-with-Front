@@ -1,8 +1,51 @@
+a {
+  text-decoration: none;
+}
+.title__bar {
+  position: relative;
+}
+
 .header__title {
   font-size: 8vw;
   font-family: "Bree Serif", serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin: 10px 0px;
+}
+
+.main__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.logo__pic {
+  margin: 10px 0px;
+  width: 200px;
+}
+
+.screen__body {
+  display: flex;
+  width: 100%;
+}
+
+.nav__list {
+  background-color: aqua;
+  width: 15%;
+  height: 100vh;
+}
+
+.nav__item {
+  font-size: 4vw;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__links {
+  margin-bottom: 10px;
+}
+.screen {
+  margin-left: 2%;
+  width: 100%;
+  background-color: red;
 }
