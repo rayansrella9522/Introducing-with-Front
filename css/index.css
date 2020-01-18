@@ -48,3 +48,7 @@ a {
   width: 100%;
   background-color: red;
 }
+
+.login__bar{
+  float: right;
+}
