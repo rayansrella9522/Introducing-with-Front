@@ -102,7 +102,7 @@ body{margin:0 auto;}
   background-repeat: no-repeat;
   background-size: 100% 100%;
   float: left;
-  margin:5%;
+  margin:7%;
 }
 .content .con2{
   width:35%;
@@ -111,7 +111,7 @@ body{margin:0 auto;}
   background-repeat: no-repeat;
   background-size: 100% 100%;
   float: right;
-  margin:5%;
+  margin:7%;
 }
 </style>
 </head>
@@ -245,71 +245,91 @@ function mouseout_H(){
 
 ///////////////////////////content 사진 효과/////////////////////////////
 
-// var con1 = document.querySelector('.con1');
-// var con2 = document.querySelector('.con2');
-// con1.addEventListener('mouseover',con1_mouseover_H);
-// con2.addEventListener('mouseover',con2_mouseover_H);
-// con1.addEventListener('mouseout',con1_mouseout_H);
-// con2.addEventListener('mouseout',con2_mouseout_H);
-// var con1_detect = false;
-// var con2_detect = false;
-// var con1_width = 35;
-// var con2_width = 35;
+var con1 = document.querySelector('.con1');
+var con2 = document.querySelector('.con2');
+con1.addEventListener('mouseover',con1_mouseover_H);
+con2.addEventListener('mouseover',con2_mouseover_H);
+con1.addEventListener('mouseout',con1_mouseout_H);
+con2.addEventListener('mouseout',con2_mouseout_H);
+var con1_detect = false;
+var con2_detect = false;
+var con1_width = 35;
+var con1_height = 35;
+var con1_margin = 7;
+var con2_width = 35;
+var con2_height = 35;
+var con2_margin = 7;
 
-// function con1_mouseover_H(){
-//   if(con1_detect==false){
-//     var con1_interval = setInterval(function(){
-//       con1_width++;
-//       con1.style.width = con1_width+'%';
-//       if(con1_width == 45){
-//         clearInterval(con1_interval);
-//         con1_detect = true;
-//       }
-//     },20);
-//   }
-// }
-// function con2_mouseover_H(){
-//   if(con2_detect==false){
-//     var con2_interval = setInterval(function(){
-//       con2_width++;
-//       con2.style.width = con2_width+'%';
-//       if(con2_width == 45){
-//         clearInterval(con2_interval);
-//         con2_detect = true;
-//       }
-//     },20);
-//   }
-// }
+function con1_mouseover_H(){
+  if(con1_detect==false&&con1_width==35){
+    var con1_interval = setInterval(function(){
+      con1_width++;
+      con1_height++;
+      con1_margin--;
+      con1.style.width = con1_width+'%';
+      con1.style.paddingTop = con1_height+"%";
+      con1.style.margin = con1_margin+"%";
+      if(con1_width == 40){
+        clearInterval(con1_interval);
+        con1_detect = true;
+      }
+    },20);
+  }
+}
+function con2_mouseover_H(){
+  if(con2_detect==false&&con2_width==35){
+    var con2_interval = setInterval(function(){
+      con2_width++;
+      con2_height++;
+      con2_margin--;
+      con2.style.width = con2_width+'%';
+      con2.style.paddingTop = con2_height + "%";
+      con2.style.margin = con2_margin + "%";
+      if(con2_width == 40){
+        clearInterval(con2_interval);
+        con2_detect = true;
+      }
+    },20);
+  }
+}
 
 
 
 
 
-// function con1_mouseout_H(){
-//   if(con1_detect == true){
-//     var con1_close = setInterval(function(){
-//       con1_width--;
-//       con1.style.width = con1_width+'%';
-//       if(con1_width == 35){
-//         clearInterval(con1_close);
-//         con1_detect = false;
-//       }
-//     },20);
-//   }
-// }
+function con1_mouseout_H(){
+  if(con1_detect == true&&con1_width==40){
+    var con1_close = setInterval(function(){
+      con1_width--;
+      con1_height--;
+      con1_margin++;
+      con1.style.width = con1_width+'%';
+      con1.style.paddingTop = con1_height + "%";
+      con1.style.margin = con1_margin + "%";
+      if(con1_width == 35){
+        clearInterval(con1_close);
+        con1_detect = false;
+      }
+    },20);
+  }
+}
 
-// function con2_mouseout_H(){
-//   if(con2_detect == true){
-//     var con2_close = setInterval(function(){
-//       con2_width--;
-//       con2.style.width = con2_width+'%';
-//       if(con2_width == 35){
-//         clearInterval(con2_close);
-//         con2_detect = false; 
-//       }
-//     },20);
-//   }
-// }
+function con2_mouseout_H(){
+  if(con2_detect == true&&con2_width==40){
+    var con2_close = setInterval(function(){
+      con2_width--;
+      con2_height--;
+      con2_margin++;
+      con2.style.width = con2_width+'%';
+      con2.style.paddingTop = con2_height + "%";
+      con2.style.margin = con2_margin + "%";
+      if(con2_width == 35){
+        clearInterval(con2_close);
+        con2_detect = false; 
+      }
+    },20);
+  }
+}
 ///////////////////////////content 사진 효과  끝///////////////////////////
 
 </script>
