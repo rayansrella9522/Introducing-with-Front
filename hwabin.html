@@ -38,7 +38,9 @@ body{margin:0 auto;}
   color:grey;
   font-weight: bold;
   font-size:45px;
+  letter-spacing: 20px;
   transition:0.5s;
+
 }
 
 .header .menu_button{
@@ -262,42 +264,42 @@ function onclick_H(){
 
 ////////////////////////// 헤더 타이틀 효과////////////////////////////////
 
-var header_title = document.querySelector('.title');
-header_title.addEventListener('mouseover',mouseover_H);
-header_title.addEventListener('mouseout',mouseout_H);
-var num_b = 0;
-var title_interval;
-var close_title_interval;
-var title_detect = false;
-function mouseover_H(){
-  if(num_b<=10){
-    if(title_detect == false){
-      title_interval = setInterval(function(){
-        num_b++;
-        header_title.style.letterSpacing = num_b+'px';
-        if(num_b>=20){
-          clearInterval(title_interval);
-          title_detect = true;
-        }
-      },10);
-    }
-  }
-}
+// var header_title = document.querySelector('.title');
+// header_title.addEventListener('mouseover',mouseover_H);
+// header_title.addEventListener('mouseout',mouseout_H);
+// var num_b = 0;
+// var title_interval;
+// var close_title_interval;
+// var title_detect = false;
+// function mouseover_H(){
+//   if(num_b<=10){
+//     if(title_detect == false){
+//       title_interval = setInterval(function(){
+//         num_b++;
+//         header_title.style.letterSpacing = num_b+'px';
+//         if(num_b>=20){
+//           clearInterval(title_interval);
+//           title_detect = true;
+//         }
+//       },10);
+//     }
+//   }
+// }
 
-function mouseout_H(){
-  if(num_b>=20){
-    if(title_detect == true){
-      close_title_interval = setInterval(function(){
-        num_b--;
-        header_title.style.letterSpacing = num_b+'px';
-        if(num_b<=10){
-          clearInterval(close_title_interval);
-          title_detect = false;
-        }
-      },25);
-    }
-  }
-}
+// function mouseout_H(){
+//   if(num_b>=20){
+//     if(title_detect == true){
+//       close_title_interval = setInterval(function(){
+//         num_b--;
+//         header_title.style.letterSpacing = num_b+'px';
+//         if(num_b<=10){
+//           clearInterval(close_title_interval);
+//           title_detect = false;
+//         }
+//       },25);
+//     }
+//   }
+// }
 
 
 
