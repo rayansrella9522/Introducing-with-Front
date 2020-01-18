@@ -3,7 +3,7 @@ var fs = require('fs');
 var app = http.createServer(function(request,response){
     var url = request.url;
     if(request.url == '/'){
-      url = '/Introducing-with-Front/index.html';
+      url = '/index.html';
     }
     if(request.url == '/favicon.ico'){
         response.writeHead(404);
