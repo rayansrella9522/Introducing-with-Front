@@ -1,0 +1,6 @@
+.paging {text-align: center; font-size: 20;}
+.paging li {display:inline-block; vertical-align: middle;}
+.paging li a {display:block; width: 21px; height: 21px; line-height: 21px; color: #898786;} /* 크기 조절 */
+.paging li a:hover {color: #ff5a20; text-decoration: underline;} /* 호버(강조) 기능 */
+.paging li.prev a {background-image:url(../img/ico_paging.png); } /* img 폴더 안에 있는 방향표 모양 사진 */
+.paging li.next a {background-image:url(../img/ico_paging2.png); }
