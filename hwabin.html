@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel|Nanum+Gothic&display=swap" rel="stylesheet">
+<title></title>
+<style type="text/css">
+body{margin:0 auto;}
+.header{
+  z-index: 1;
+  background: white;
+  width:100%;
+  height:70px;
+  border-bottom: 1px solid grey;
+  position: fixed;
+}
+.header h1{
+  text-align: center;
+  font-size: 40px;
+  margin:0 auto;
+}
+.header h1 a{
+  text-decoration: none;
+  color:black;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 10px;
+}
+.header h1 a:visited{
+  color:black;
+}
+.header h1 a:hover{
+  color:grey;
+  font-weight: bold;
+  font-size:45px;
+  transition:0.5s;
+}
+
+.header .menu_button{
+  width:50px;
+  height:50px;
+  border: 1px solid grey;
+  position: absolute; left:10px; top:8px;
+}
+.header .menu_button:hover{
+  cursor:pointer;
+  background: grey;
+  transition:1s;
+}
+
+
+
+
+
+.side_menu{
+  width:0%;
+  height:1000px;
+  background-color: rgba(171,169,167,0.5);
+  position: fixed;
+  top:70px;
+  display: none;
+  overflow: hidden;
+}
+.side_menu .menu{
+  width:100%;
+  height:100px;
+  margin:0 auto;
+  text-align: center;
+  display: none;
+  font-family: 'Cinzel', serif;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+.side_menu .menu h2{
+  font-size: 25px;
+  font-weight: normal;
+}
+.side_menu .menu h2:hover{
+  font-size: 27px;
+  font-weight: bold;
+  color:grey;
+  cursor:pointer;
+  transition:0.5s;
+}
+
+
+
+
+
+
+.content{
+  position: relative; top:75px;
+  width:100%;
+  height:1000px;
+}
+.content .con1{
+  width:45%;
+  height:300px;
+  background-image: url('image/test1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  float: left;
+}
+.content .con2{
+  width:45%;
+  height:300px;
+  background-image: url('image/test2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class = "menu_button"><a href=""></a></div>
+<h1><a href = "" class = title>The Developers</a></h1>
+</div>
+<div class="side_menu">
+<div class="menu" id = 'menu1'><h2>메뉴1</h2></div>
+<div class="menu" id = 'menu2'><h2>메뉴2</h2></div>
+<div class="menu" id = 'menu3'><h2>메뉴3</h2></div>
+<div class="menu" id = 'menu4'><h2>메뉴4</h2></div>
+<div class="menu" id = 'menu5'><h2>메뉴5</h2></div>
+</div>
+<div class="content">
+<div class="con1"></div>
+<div class="con2"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+///////////////////////좌측 메뉴 구현 /////////////////////////////////////////////
+var menu_button = document.querySelector('.menu_button');
+var side_menu = document.querySelector('.side_menu');
+var menu = document.querySelectorAll('.menu');
+var content = document.querySelector('.content');
+var menu_detect = false;
+var open_menu_interval;
+var close_menu_interval;
+var side_menu_width = 0;
+var content_width = 100;
+var content_margin = 0;
+menu_button.addEventListener('click',onclick_H);
+
+function onclick_H(){
+  if(menu_detect == false&&side_menu_width==0){
+    side_menu.style.display='block';
+    open_menu_interval = setInterval(function(){
+      side_menu_width++;
+      content_width--;
+      content_margin++;
+      content.style.width = content_width+"%";
+      content.style.marginLeft = content_margin+'%';
+      side_menu.style.width = side_menu_width+"%";
+
+      if(side_menu_width>=15){
+        clearInterval(open_menu_interval);
+        menu_detect = true;
+        for(var i=0;i<menu.length;i++){
+          menu[i].style.display='block';
+        }
+      }
+    },20);
+  }
+
+  if(menu_detect==true&&side_menu_width==15){
+    for(var i=0;i<menu.length;i++){
+      menu[i].style.display='none';
+    }
+    close_menu_interval = setInterval(function(){
+      side_menu_width--;
+      content_width++;
+      content_margin--;
+      side_menu.style.width = side_menu_width+"%";
+      content.style.width = content_width+"%";
+      content.style.marginLeft = content_margin+"%";
+      if(side_menu_width<=0){
+        clearInterval(close_menu_interval);
+        menu_detect = false;
+        side_menu.style.display='none';
+        content.style.width='100%';
+        content.style.marginLeft="0%";
+      }
+    },20);
+  }
+}
+///////////////////////좌측 메뉴 구현 끝/////////////////////////////////////////////
+
+////////////////////////// 헤더 타이틀 효과////////////////////////////////
+
+var header_title = document.querySelector('.title');
+header_title.addEventListener('mouseover',mouseover_H);
+header_title.addEventListener('mouseout',mouseout_H);
+var num_b = 0;
+var title_interval;
+var close_title_interval;
+var title_detect = false;
+function mouseover_H(){
+  if(num_b<=10){
+    if(title_detect == false){
+      title_interval = setInterval(function(){
+        num_b++;
+        header_title.style.letterSpacing = num_b+'px';
+        if(num_b>=20){
+          clearInterval(title_interval);
+          title_detect = true;
+        }
+      },10);
+    }
+  }
+}
+
+function mouseout_H(){
+  if(num_b>=20){
+    if(title_detect == true){
+      close_title_interval = setInterval(function(){
+        num_b--;
+        header_title.style.letterSpacing = num_b+'px';
+        if(num_b<=10){
+          clearInterval(close_title_interval);
+          title_detect = false;
+        }
+      },25);
+    }
+  }
+}
+
+
+
+/////////////////////////////헤더 타이틀 효과 끝 //////////////////////////////
+
+
+
+</script>
+</body>
+</html>
