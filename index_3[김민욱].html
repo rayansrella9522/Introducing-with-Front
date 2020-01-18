@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+body{margin:0 auto;}
+.header{
+  width:100%;
+  height:70px;
+  border-bottom: 1px solid grey;
+}
+.header h1{
+  text-align: center;
+  font-size: 40px;
+  margin:0 auto;
+}
+.header .menu_button{
+  width:50px;
+  height:50px;
+  border: 1px solid grey;
+  position: absolute; left:10px; top:8px;
+}
+
+.side_menu{
+  width:0%;
+  height:1000px;
+  background: grey;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class = "menu_button"></div>
+<h1>The Developers</h1>
+</div>
+<div class="side_menu"></div>
+
+
+<script type="text/javascript">
+
+
+var menu_button = document.querySelector('.menu_button');
+var side_menu = document.querySelector('.side_menu');
+var menu_detect = false;
+menu_button.addEventListener('click',onclick_H);
+var open_menu_interval;
+var close_menu_interval;
+var num_a = 0;
+
+function onclick_H(){
+  if(menu_detect == false){
+    open_menu_interval = setInterval(function(){
+      num_a++;
+      side_menu.style.width = num_a+"%";
+      if(num_a>=15){
+        clearInterval(open_menu_interval);
+        menu_detect = true;
+      }
+    },20);
+  }
+  if(menu_detect==true){
+    close_menu_interval = setInterval(function(){
+      num_a--;
+      side_menu.style.width = num_a+"%";
+      if(num_a<=0){
+        clearInterval(close_menu_interval);
+        menu_detect = false;
+      }
+    },20);
+  }
+}
+</script>
+</body>
+</html>
