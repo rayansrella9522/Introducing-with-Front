@@ -49,7 +49,7 @@ body{margin:0 auto;}
   cursor:pointer;
 }
     .index_1{
-      border : 3px solid black;
+      border : 2px solid black;
            border-radius: 50px;
            width: 25px;
            position:absolute;
@@ -57,7 +57,7 @@ body{margin:0 auto;}
             top:13px;
     }
     .index_3{
-      border : 3px solid black;
+      border : 2px solid black;
            border-radius: 50px;
            width: 25px;
            position:absolute;
@@ -67,7 +67,7 @@ body{margin:0 auto;}
       
     }
     .index_2{
-      border : 3px solid black;
+      border : 2px solid black;
            border-radius: 50px;
            width: 25px;
            position:absolute;
@@ -170,6 +170,12 @@ body{margin:0 auto;}
 <script type="text/javascript">
 ///////////////////////좌측 메뉴 구현 /////////////////////////////////////////////
 var menu_button = document.querySelector('.menu_button');
+var index_1 = document.querySelector('.index_1');
+var index_3 = document.querySelector('.index_2');
+var index_2 = document.querySelector('.index_3');
+var index_1_top = 13;
+var index_3_top = 33;
+
 var side_menu = document.querySelector('.side_menu');
 var menu = document.querySelectorAll('.menu');
 var content = document.querySelector('.content');
@@ -191,7 +197,6 @@ function onclick_H(){
       content.style.width = content_width+"%";
       content.style.marginLeft = content_margin+'%';
       side_menu.style.width = side_menu_width+"%";
-
       if(side_menu_width>=15){
         clearInterval(open_menu_interval);
         menu_detect = true;
@@ -222,7 +227,36 @@ function onclick_H(){
       }
     },20);
   }
+
+  if(index_1_top==13){
+    var button_ani = setInterval(function(){
+      index_1_top--;
+      index_3_top++;
+      index_1.style.top = index_1_top + "px";
+      index_3.style.top = index_3_top + "px";
+      if(index_1_top==5){
+        clearInterval(button_ani);
+      }
+    },30);
+  }
+  else if(index_1_top==5){
+    var button_ani_close = setInterval(function(){
+      index_1_top++;
+      index_3_top--;
+      index_1.style.top = index_1_top + "px";
+      index_3.style.top = index_3_top + "px";
+      if(index_1_top==13){
+        clearInterval(button_ani_close);
+      }
+    },30);
+  }
 }
+
+
+
+
+
+
 ///////////////////////좌측 메뉴 구현 끝/////////////////////////////////////////////
 
 ////////////////////////// 헤더 타이틀 효과////////////////////////////////
